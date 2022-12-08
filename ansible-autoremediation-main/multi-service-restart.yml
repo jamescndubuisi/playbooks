@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+    - name: ensure nginx is at the latest version
+      apt: name=nginx state=latest
+    - name: restart nginx
+      service:
+          name: nginx
+          state: restarted
+# - name: service activation 
+#   service: 
+#     name: {{ item }} 
+#     state: started 
+#     enabled: yes 
+#   with_item: 
+#     - httpd 
+#     - ssh 
+#     - nginx
