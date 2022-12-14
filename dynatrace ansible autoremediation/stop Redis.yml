@@ -1,0 +1,8 @@
+---
+- name : Stop Redis
+  hosts: all
+  tasks:
+   - name: ensure Redis is stopped
+     service:
+          name: redis-server
+          state: stopped 

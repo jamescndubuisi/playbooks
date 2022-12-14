@@ -1,0 +1,9 @@
+---
+- name : Stop tomcat
+  hosts: all
+  tasks:
+   - name: ensure tomcat is stopped
+      become: yes
+      systemd:
+          name: tomcat
+          state: stopped 

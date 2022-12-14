@@ -1,0 +1,9 @@
+---
+- name : Stop Apache2
+  hosts: all
+  tasks:
+   - name: ensure apache2 is stopped
+     service:
+        name: apache2
+        state: started 
+        enabled: yes
